@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4CC81B96-998D-48DF-8957-9E1134A24977}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AssemblyName>NTP3Library</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <ApplicationVersion>1.1.0.4</ApplicationVersion>
+    <FileAlignment>512</FileAlignment>
+    <RootNamespace>NTP3</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AnalysisResult.cs" />
+    <Compile Include="Enums.cs" />
+    <Compile Include="Interfaces\IIniFile.cs" />
+    <Compile Include="Interfaces\IIniFileFactory.cs" />
+    <Compile Include="PowerLawFitCoeffs.cs" />
+    <Compile Include="IndentationSeriesRecord.cs" />
+    <Compile Include="AnalysisResultRecord.cs" />
+    <Compile Include="AdditionalInfo.cs" />
+    <Compile Include="Materials.cs" />
+    <Compile Include="DataReader.cs" />
+    <Compile Include="Utils\FileInfoExtension.cs" />
+    <Compile Include="AnalysisResultRecordComparer.cs" />
+    <Compile Include="AnalysisResultReader.cs" />
+    <Compile Include="AnalysisExportColumn.cs" />
+    <Compile Include="AnalysisExportColumnSpecification.cs" />
+    <Compile Include="AnalysisResultsFormatter.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NTP3DI\NTP3DI.csproj">
+      <Project>{3737EE74-BE09-44A2-A4A1-F947DCBE88FA}</Project>
+      <Name>NTP3DI</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
